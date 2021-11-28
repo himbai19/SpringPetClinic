@@ -24,7 +24,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                bat 'java -jar target/*.jar'
+                bat 'nohupjava -jar -DServer.port=8001 target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar &'
             }
         }
     }
