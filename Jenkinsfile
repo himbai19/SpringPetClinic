@@ -24,7 +24,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                bat 'nohupjava -jar -DServer.port=8001 target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar &'
+                bat 'nohup java -jar -DServer.port=8001 target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar &'
             }
         }
     }
