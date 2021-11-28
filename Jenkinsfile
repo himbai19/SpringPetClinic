@@ -24,6 +24,8 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                bat 'java -jar C:\Users\Himanshu\.jenkins\workspace\SpringPetClinic_main\target\*.jar'
+                bat 'java -jar target/*.jar'
+            }
+        }
     }
 }
