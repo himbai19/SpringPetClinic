@@ -1,6 +1,6 @@
 pipeline{
     agent{label 'master'}
-    tools{maven 'M3'}
+    tools{maven 'MVN3'}
     stages{
         stage('Checkout'){
             steps{
@@ -9,22 +9,17 @@ pipeline{
         }
         stage('Build'){
             steps{
-                sh 'mvn compile'
+                bat 'mvn compile'
             }
         }
         stage('Test'){
             steps{
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Package'){
             steps{
-                sh 'mvn package'
-            }
-        }
-        stage('Deploy'){
-            steps{
-                sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
+                bat 'mvn package'
             }
         }
     }
